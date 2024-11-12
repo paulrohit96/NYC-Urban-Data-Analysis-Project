@@ -1,0 +1,72 @@
+SQL QUERIES OF DATASET-1 (NYC PLACEMENT DATASET) 
+
+QUERY1: 
+
+query = """
+SELECT
+    "Job Location",
+    AVG(CAST("Salary ($1000)" AS FLOAT)) AS avg_salary
+FROM
+    df_jobs
+GROUP BY
+    "Job Location"
+ORDER BY
+    avg_salary DESC;
+    """
+
+result = ps.sqldf(query, locals())
+result.head()
+
+QUERY2:
+
+query = """
+SELECT
+    "Visa",
+    COUNT("Consultant Name") AS consultant_count
+FROM
+    df_jobs
+GROUP BY
+    "Visa"
+ORDER BY
+    consultant_count DESC;
+    """
+
+result = ps.sqldf(query, locals())
+result.head()
+
+QUERY3: 
+query = """
+SELECT
+    "Job Title",
+    COUNT("Hired") AS hired_count
+FROM
+    df_jobs
+WHERE
+    "Hired" = 'y'
+GROUP BY
+    "Job Title"
+ORDER BY
+    hired_count DESC;
+    """
+
+result = ps.sqldf(query, locals())
+result.head()
+
+QUERY 4:
+
+query = """
+SELECT
+    "Consultant Name",
+    "Job Title",
+    "Submission Date",
+    "Joining Date"
+FROM
+    df_jobs
+WHERE
+    "Submission Date" BETWEEN '2023-07-12' AND '2023-12-14'
+AND
+    "Hired" = 'y';
+    """
+
+result = ps.sqldf(query, locals())
+result.head()
