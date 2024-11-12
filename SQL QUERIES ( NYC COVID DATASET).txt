@@ -1,0 +1,74 @@
+SQL QUERIES ( NYC COVID DATASET)
+
+QUERY-1
+
+query = """
+SELECT
+    SUM(CASE_COUNT) AS Total_Cases,
+    SUM(HOSPITALIZED_COUNT) AS Total_Hospitalizations,
+    SUM(DEATH_COUNT) AS Total_Deaths
+FROM df_covid;
+"""
+result = ps.sqldf(query, locals())
+result
+
+
+QUERY-2 
+
+query = """
+SELECT
+    date_of_interest,
+    CASE_COUNT
+FROM df_covid
+WHERE CASE_COUNT > 1000
+ORDER BY date_of_interest ASC;
+"""
+
+result = ps.sqldf(query, locals())
+print(result)
+
+
+QUERY-3:
+
+query = """
+SELECT
+    AVG(CASE_COUNT_7DAY_AVG) AS Avg_Case_Count_7Day_Avg,
+    AVG(HOSP_COUNT_7DAY_AVG) AS Avg_Hospitalized_7Day_Avg,
+    AVG(DEATH_COUNT_7DAY_AVG) AS Avg_Death_Count_7Day_Avg
+FROM df_covid;
+"""
+
+result = ps.sqldf(query, locals())
+print(result)
+
+QUERY-4:
+
+query = """
+SELECT
+    date_of_interest,
+    BX_CASE_COUNT
+FROM df_covid
+ORDER BY BX_CASE_COUNT DESC
+LIMIT 1;
+"""
+
+# Execute the query using pandasql
+result = ps.sqldf(query, locals())
+print(result)
+
+QUERY-5:
+
+query = """
+SELECT
+    strftime('%Y-%m', date_of_interest) AS Month,
+    SUM(CASE_COUNT) AS Total_Cases,
+    SUM(HOSPITALIZED_COUNT) AS Total_Hospitalizations,
+    SUM(DEATH_COUNT) AS Total_Deaths
+FROM df_covid
+GROUP BY strftime('%Y-%m', date_of_interest)
+ORDER BY Month ASC;
+"""
+
+# Execute the query using pandasql
+result = ps.sqldf(query, locals())
+print(result)

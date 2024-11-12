@@ -1,0 +1,85 @@
+SQL QUERIES NYV SHOOTING DATASET 
+
+QUERY1:
+
+query1 = """
+SELECT
+    boro,
+    COUNT(incident_key) AS total_incidents
+FROM
+    df
+GROUP BY
+    boro
+ORDER BY
+    total_incidents DESC;
+"""
+total_incidents_by_boro = ps.sqldf(query1)
+print(total_incidents_by_boro)
+
+QUERY-2:
+
+query2 = """
+SELECT
+    strftime('%H', occur_time) AS occur_hour,
+    COUNT(incident_key) AS incident_count
+FROM
+    df
+GROUP BY
+    occur_hour
+ORDER BY
+    occur_hour;
+"""
+incidents_by_hour = ps.sqldf(query2)
+print(incidents_by_hour) 
+
+QUERY-3:
+
+query4 = """
+SELECT
+    boro,
+    COUNT(incident_key) AS murder_incidents
+FROM
+    df
+WHERE
+    statistical_murder_flag = TRUE
+GROUP BY
+    boro
+ORDER BY
+    murder_incidents DESC;
+"""
+murder_incidents_by_boro = ps.sqldf(query4)
+print(murder_incidents_by_boro)
+
+QUERY-4:
+
+query5 = """
+SELECT
+    loc_of_occur_desc,
+    COUNT(incident_key) AS total_incidents
+FROM
+    df
+GROUP BY
+    loc_of_occur_desc
+ORDER BY
+    total_incidents DESC
+LIMIT 10;  -- Limiting to top 10 locations
+"""
+common_locations = ps.sqldf(query5)
+print(common_locations)
+
+
+QUERY -5:
+
+query6 = """
+SELECT
+    strftime('%w', occur_date) AS day_of_week,  -- 0 = Sunday, 1 = Monday, ..., 6 = Saturday
+    COUNT(incident_key) AS total_incidecnts
+FROM
+    df
+GROUP BY
+    day_of_week
+ORDER BY
+    day_of_week;
+"""
+crime_trends_by_day = ps.sqldf(query6)
+print(crime_trends_by_day)
