@@ -1,4 +1,4 @@
-# Scalable-MidTerm
+# NYC Urban Data Analysis
 
 NYC Urban Data Analysis Project
 Overview:
