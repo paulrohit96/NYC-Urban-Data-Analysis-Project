@@ -70,5 +70,4 @@ Through exploratory data analysis, visualization, and data cleaning, we uncover 
 
 ---
 
-## 📁 Project Structure
 
