@@ -1,29 +1,74 @@
-# NYC Urban Data Analysis
+# NYC Urban Data Analysis Project
 
-NYC Urban Data Analysis Project
-Overview:
-This project provides a comprehensive analysis of New York City’s urban dynamics through three primary datasets: NYC Shooting Incidents, COVID-19 statistics, and Job Placements. Using Python and SQL, we explore patterns in public safety, public health, and employment to reveal insights about NYC.
+## 📊 Overview
 
- Key Objectives:
-- Shooting Data: Analyze incident trends by location, time, and demographics to support public safety strategies.
-- COVID-19 Data: Examine infection, hospitalization, and mortality trends to understand pandemic impacts on different regions.
-- Job Placement Data: Evaluate job trends, salary benchmarks, and visa statuses for insights into NYC’s employment landscape.
+This project delivers a comprehensive analysis of **New York City’s urban dynamics** by integrating and examining three major datasets:
 
-Tools & Technologies
-- Data Analysis: Python (pandas, NumPy)
-- Visualization: Matplotlib, Seaborn, Plotly, GeoPandas
-- SQL: Complex queries for in-depth analysis
+- **NYC Shooting Incidents**
+- **COVID-19 Statistics**
+- **Job Placements**
 
-Data Preparation & Challenges:
-Data was meticulously cleaned and standardized to handle missing values, outliers, and varying data formats. Challenges included aligning temporal and geospatial data across datasets, resolved using custom functions and time-series resampling.
+Through exploratory data analysis, visualization, and data cleaning, we uncover patterns in **public safety**, **public health**, and **employment trends** using Python and SQL. This project aims to support informed decision-making across sectors.
 
-Visualizations:
-- Heatmaps of shooting and COVID-19 hotspots
-- Line and bubble charts for pandemic trends and job distributions
+---
 
-Future Work:
-We plan to implement machine learning models for predictive insights and create an interactive dashboard for real-time data exploration.
+## 🎯 Key Objectives
 
+### 🔫 Shooting Incidents
+- Analyze trends in incident counts by **location**, **time**, and **demographics**
+- Identify **hotspots** and seasonal or neighborhood-level patterns
+- Provide data-driven insights for **public safety strategies**
 
+### 🦠 COVID-19 Data
+- Track **infection**, **hospitalization**, and **mortality** rates over time
+- Analyze disparities across **boroughs**, **zip codes**, and **age groups**
+- Visualize pandemic waves and their impact on urban populations
 
-This brief overview provides essential project information, making it easy for users to understand the scope and tools used.
+### 💼 Job Placement Data
+- Explore **job trends**, **salary benchmarks**, and **visa sponsorships**
+- Examine hiring rates by **industry**, **employer**, and **region**
+- Gain insights into NYC’s **post-pandemic employment recovery**
+
+---
+
+## 🧰 Tools & Technologies
+
+- **Data Analysis**: `Python`, `pandas`, `NumPy`
+- **Data Visualization**: `Matplotlib`, `Seaborn`, `Plotly`, `GeoPandas`
+- **Database Querying**: `SQL` (with complex joins, aggregations, and window functions)
+- **Geospatial Analysis**: `GeoPandas`, mapping COVID and crime hotspots
+
+---
+
+## 🛠 Data Preparation & Challenges
+
+- Addressed **missing values**, **outliers**, and **inconsistent formats**
+- Aligned **temporal** and **geospatial** fields across datasets using:
+  - Custom data cleaning functions
+  - Time-series resampling
+  - Coordinate standardization
+- Ensured cross-dataset consistency for meaningful comparisons
+
+---
+
+## 📈 Visualizations
+
+- **Heatmaps**: COVID-19 case and shooting incident hotspots
+- **Time-Series Charts**: Infection, mortality, and job posting trends
+- **Bubble Charts**: Employment distribution by company and visa status
+- **Geo-Choropleths**: Borough-level analysis for all three domains
+
+---
+
+## 🚀 Future Work
+
+- Integrate **machine learning models** to:
+  - Predict crime patterns
+  - Forecast infection rates
+  - Estimate job demand
+- Build an **interactive dashboard** using `Dash` or `Streamlit` for real-time exploration
+
+---
+
+## 📁 Project Structure
+
